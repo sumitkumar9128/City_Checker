@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Info..</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #4c69ff, #2a36c7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 20px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        input:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        input::placeholder {
+            color: #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+        button:hover {
+            background-color: #ff4757;
+            transform: translateY(-2px);
+        }
+        .button-loading::after {
+            content: '';
+            border: 2px solid #fff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+        .result {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .result div {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        .result div:hover {
+            transform: translateY(-3px);
+        }
+        .result span {
+            font-weight: 700;
+            color: #ff6b81;
+        }
+    </style>
+</head>
+<body> 
+
+    <div class="container">
+        <h2>City Checker</h2>
+        <input type="text" id="input" placeholder="Enter city name..." />
+        <button id="btn">Search</button>
+
+        <div class="result">
+            <div id="city-name"><span>City:</span> Not available</div>
+            <div id="city-time"><span>Local Time:</span> Not available</div>
+            <div id="city-temp"><span>Temperature (°C):</span> Not available</div>
+            <div id="city-timezone"><span>Time Zone:</span> Not available</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
